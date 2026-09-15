@@ -1,6 +1,67 @@
+<div align="center">
+
 # Remit
 
-**An agentic skills framework for AI governance.**
+### Checks what an AI agent is allowed to do without asking anyone
+
+**An agent that writes off money was described as "you approve, it acts".**
+**Its code lets it act with nobody approving. Remit is the set of checks that caught it.**
+
+<br/>
+
+[![The Remit control room with the OpsPilot row open, showing its two control gaps and four findings](./docs/hero.png)](https://patkusch.github.io/remit/dashboard/)
+
+**The real control room, dark theme.** OpsPilot is open: two gaps worked out in the page from its record.
+[Open it live](https://patkusch.github.io/remit/dashboard/) · [Install](#install)
+
+<br/>
+
+[![Claude Code skills](https://img.shields.io/badge/Claude_Code-9_skills-1A1A1A?style=for-the-badge)](skills/)
+[![Python](https://img.shields.io/badge/Python-3.12-1A1A1A?style=for-the-badge&logo=python&logoColor=white)](scripts/)
+[![License](https://img.shields.io/badge/License-MIT-1A1A1A?style=for-the-badge)](./LICENSE)
+[![Checks](https://img.shields.io/github/actions/workflow/status/patkusch/remit/checks.yml?branch=main&style=for-the-badge&label=10%20checks%20in%20CI)](https://github.com/patkusch/remit/actions/workflows/checks.yml)
+
+</div>
+
+---
+
+## The thirty-second version
+
+[OpsPilot](https://github.com/patkusch/opspilot) is a real agent for a bank back office.
+It clears mismatches between ledgers, and it can write off money.
+
+Its README promises a person in the loop. Remit's skills read its source instead, and wrote down what they found in [its record](examples/opspilot/opspilot.record.yaml):
+
+> **Declared** — *"README says 'you approve, it acts'"*
+>
+> **Found in the code** — *"POST /api/run builds a fresh plan and executes it in the same call."*
+> Nothing on the server checks that anyone saw the plan, let alone approved it.
+
+Then one command checks the record:
+
+```bash
+python scripts/validate_record.py examples/opspilot/
+```
+
+```
+✓ examples/opspilot/opspilot.record.yaml
+    ! observed tier A3 exceeds declared tier A2 — the system is running with more autonomy than it is governed for
+    ! oversight level requires a halt mechanism; none recorded
+
+1 record(s) · 0 failed · 1 with warnings
+```
+
+In plain words: A2 means a person approves before it acts, A3 means it acts on its own. And it has no off switch.
+
+The same reading found the sign-off limit could be beaten by typing someone else's name.
+**A control the caller satisfies by describing itself is not a control.**
+
+OpsPilot is a demo on made-up data, so none of this is urgent.
+The point is that the checks found real things in real code. [The full assessment](examples/opspilot/).
+
+---
+
+## What it is
 
 Established AI governance frameworks were written for systems that *produce outputs*.
 An agent *takes actions*. Remit is a set of installable agent skills that do real
@@ -20,8 +81,6 @@ found when pointed at a widely-used coding agent, and why existing frameworks mi
 **→ [`QUICKSTART.md`](QUICKSTART.md)** — five minutes, and you never type a skill name.
 **→ [Live control room](https://patkusch.github.io/remit/dashboard/)** — the estate on the
 grid, control gaps computed in the page. No install needed to look.
-**→ [`examples/opspilot/`](examples/opspilot/)** — what it produces, run against a real
-agentic system that writes off money.
 
 Everything below is why it works and how it was tested. You don't need it to start.
 
