@@ -379,7 +379,7 @@ the point your investigation concludes.
 remit/
 ├── framework/
 │   ├── autonomy-tiers.md          A0–A4 × B0–B3, the grid, oversight obligations
-│   ├── diagnostic-manual.md       18 failure modes, diagnostic criteria, controls
+│   ├── diagnostic-manual.md       19 failure modes, diagnostic criteria, controls
 │   ├── system-record.schema.json  the shared artefact
 │   └── crosswalk.md               EU AI Act ↔ NIST ↔ ISO 42001 ↔ DORA
 ├── skills/
@@ -394,7 +394,7 @@ remit/
 │   └── evidence-pack/
 ├── scripts/
 │   └── validate_record.py         schema + governance checks, CI-ready
-├── adversary/                     can you do the harm without leaving the signature?
+├── evidence/adversary/            can you do the harm without leaving the signature?
 │   ├── harms.py                   what went wrong, defined without the criteria
 │   ├── evasions.py                seven tactics, matched honest/evasive pairs
 │   └── run.py                     caught · evaded · deterred · noise
