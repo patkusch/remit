@@ -38,7 +38,7 @@ updates your installed skills.
 `./install.sh --copy` if you'd rather not symlink. `./install.sh --uninstall` to remove.
 
 > Don't just `cp skills/* ~/.claude/skills/`. The skills reference the framework by relative
-> path in thirteen places; copying them alone leaves every one dangling and the skills lose
+> path in eight places; copying them alone leaves every one dangling and the skills lose
 > the manual and the schema **silently**. The README said to do exactly that for three days
 > before anyone tried it.
 

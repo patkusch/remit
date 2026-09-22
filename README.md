@@ -184,7 +184,7 @@ drift, contradict each other, and an auditor finds the contradiction before you 
 
 ## The failure taxonomy at a glance
 
-Eighteen modes across six classes, each with lettered diagnostic criteria so two
+Nineteen modes across six classes, each with lettered diagnostic criteria so two
 reviewers reach the same classification from the same evidence.
 
 ```mermaid
@@ -193,7 +193,7 @@ flowchart LR
 
     G["<b>G · Goal</b><br/>what it's pursuing<br/>─────────<br/>G1 specification gaming<br/>G2 goal drift<br/>G3 subgoal fixation"]
     P["<b>P · Perception</b><br/>what it believes<br/>─────────<br/>P1 confabulation<br/>P2 injected belief<br/>P3 stale-state action<br/>P4 sycophantic revision"]
-    A["<b>A · Action</b><br/>what it does<br/>─────────<br/>A1 scope creep<br/>A2 retry storm<br/>A3 irreversibility blindness"]
+    A["<b>A · Action</b><br/>what it does<br/>─────────<br/>A1 scope creep<br/>A2 retry storm<br/>A3 irreversibility blindness<br/>A4 unverified completion"]
     M["<b>M · Memory</b><br/>what it carries<br/>─────────<br/>M1 memory poisoning<br/>M2 context amnesia<br/>M3 confabulated continuity"]
     S["<b>S · Social</b><br/>agent to agent<br/>─────────<br/>S1 deference cascade<br/>S2 responsibility diffusion"]
     R["<b>R · Self-report</b><br/>what it claims<br/>─────────<br/>R1 post-hoc rationalisation<br/>R2 overclaiming completion<br/>R3 failure concealment"]
@@ -220,7 +220,7 @@ scope creep leads to amnesia.
 | File | What it gives you |
 |---|---|
 | [`autonomy-tiers.md`](framework/autonomy-tiers.md) | A0–A4 autonomy × B0–B3 blast radius, the governance grid, and what each oversight level obliges |
-| [`diagnostic-manual.md`](framework/diagnostic-manual.md) | 18 agent failure modes across six classes, with diagnostic criteria and controls |
+| [`diagnostic-manual.md`](framework/diagnostic-manual.md) | 19 agent failure modes across six classes, with diagnostic criteria and controls |
 | [`system-record.schema.json`](framework/system-record.schema.json) | The shared artefact every skill reads from and writes to |
 | [`crosswalk.md`](framework/crosswalk.md) | EU AI Act ↔ NIST AI RMF ↔ ISO 42001 ↔ DORA, and where the agentic gap sits |
 
@@ -353,7 +353,7 @@ remove.
 **New here? [`QUICKSTART.md`](QUICKSTART.md) gets you to something useful in five minutes.**
 
 > The previous instruction here was `cp -r remit/skills/* ~/.claude/skills/`, and it was
-> broken. The skills reference the framework by relative path in thirteen places; copying
+> broken. The skills reference the framework by relative path in eight places; copying
 > them alone leaves every one dangling, and the skills lose the manual and the schema
 > **silently**. It stood for three days because nobody, including the author, ever tried
 > following it. `install.sh` exists so the failure is impossible rather than quiet.

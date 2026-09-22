@@ -6,7 +6,7 @@
 #   ./install.sh --uninstall
 #
 # Why this exists rather than a cp one-liner: every skill refers to the framework by
-# relative path (../../framework/diagnostic-manual.md and friends — 13 references). Copy
+# relative path (../../framework/diagnostic-manual.md and friends — 8 references). Copy
 # the skills folder alone, as the README used to advise, and every one of those dangles.
 # The skills still load; they just quietly lose the manual, the schema, and the tier model.
 #
